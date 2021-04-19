@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">location</th>
+        <th scope="col">stats</th>
+        <th scope="col">Active/Inactive</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="allMatches.length">
+      <tr *ngFor="let venuelist of allMatches">
+        <td scope="col">{{ venuelist.name }}</td>
+        <td scope="col">{{ venuelist.contact.phone }}</td>
+        <td scope="col">{{ venuelist.location.address }}</td>
+        <td scope="col">{{ venuelist.stats.usersCount }}</td>
+        <td scope="col">
+            <i class="material-icons" (click)="saveVenue(venuelist)">
+                {{!venuelist.isActive ? 'star_border':'star' }}</i>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
